@@ -57,7 +57,7 @@ function makeResponsive() {
         .domain([8, d3.max(Data, d => d.smokes)])
         .range([height, 0]);
 
-        //-------------start edit-------
+       
         var circlesGroup = chartGroup.selectAll("circle")
     .data(Data)
     .enter()
@@ -75,12 +75,12 @@ function makeResponsive() {
         return (`${d.abbr}<br>Smokes: ${d.smokes}<br>Age: ${d.age}`);
       });
 
-    // Step 7: Create tooltip in the chart
-    // ==============================
+    //  Create tooltip in the chart
+    
     chartGroup.call(toolTip);
 
-    // Step 8: Create event listeners to display and hide the tooltip
-    // ==============================
+    //  Create event listeners to display and hide the tooltip
+ 
     circlesGroup.on("click", function(d) {
       toolTip.show(d, this);
     })
@@ -88,7 +88,7 @@ function makeResponsive() {
       .on("mouseout", function(d, index) {
         toolTip.hide(d);
       });
-// ---------------------end edit
+
       // create axes
       var xAxis = d3.axisBottom(xLinearScale);
       var yAxis = d3.axisLeft(yLinearScale);
