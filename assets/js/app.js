@@ -43,7 +43,7 @@ function makeResponsive() {
 
         console.log(Data);
 
-        healthData.forEach(function(data) {
+        Data.forEach(function(data) {
           data.smokes = +data.smokes;
           data.age = +data.age;
         });
